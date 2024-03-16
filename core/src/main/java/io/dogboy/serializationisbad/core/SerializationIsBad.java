@@ -120,6 +120,12 @@ public class SerializationIsBad {
     }
 
     private static SIBConfig readRemoteConfig(File minecraftDir, String url) {
+        // if the remote config url is the old default one, replace it with the new default to prevent issues
+        // see https://github.com/dogboy21/serializationisbad/issues/83 for more details
+        if ("https://raw.githubusercontent.com/dogboy21/serializationisbad/master/serializationisbad.json".equals(url)) {
+            url = new SIBConfig().getRemoteConfigUrl();
+        }
+
         Gson gson = new Gson();
         File cacheFile = new File(SerializationIsBad.getConfigDir(minecraftDir), "serializationisbad-remotecache.json");
 
