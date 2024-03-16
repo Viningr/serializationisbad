@@ -15,7 +15,7 @@ public class SIBConfig {
 
     public SIBConfig() {
         this.useRemoteConfig = true;
-        this.remoteConfigUrl = "https://raw.githubusercontent.com/dogboy21/serializationisbad/master/serializationisbad.json";
+        this.remoteConfigUrl = "https://serializationisbad.dogboy.io/serializationisbad.json";
         this.executeBlocking = true;
         this.patchModules = new ArrayList<>();
         this.classAllowlist = new HashSet<>();
